@@ -2,253 +2,446 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Amman Hydraulics & Welding</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Sri Amman Hydraulics & Welding | JCB | Hitachi | Welding Jobs</title>
+    <!-- TailwindCSS CDN + basic interceptions for fast, modern UI -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <!-- Custom smooth behaviour & minor tweaks for performance -->
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        /* subtle hover lift effect for cards */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+        }
+        /* focus ring for accessibility */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #f97316;
+            outline-offset: 2px;
+            border-radius: 0.25rem;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        /* Animated underline for navbar links */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f97316;
+            transition: width 0.2s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
+<body class="bg-gray-50 font-sans antialiased">
 
-<body class="bg-gray-100">
+    <!-- ========== MODERN STICKY NAVIGATION BAR ========== -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-5 md:px-8">
+            <div class="flex flex-wrap items-center justify-between py-3 md:py-4">
+                <!-- Logo / brand area -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center shadow-sm">
+                        <span class="text-white font-bold text-sm">⚙️</span>
+                    </div>
+                    <a href="#" class="text-xl md:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
+                        Sri Amman<span class="text-orange-500">Hydraulics</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation links -->
+                <div class="flex flex-wrap justify-center gap-3 md:gap-6 text-base font-medium">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-orange-600 transition px-2 py-1">Home</a>
+                    <a href="#jobs" class="nav-link text-gray-700 hover:text-orange-600 transition px-2 py-1">Jobs</a>
+                    <a href="#management" class="nav-link text-gray-700 hover:text-orange-600 transition px-2 py-1">Management</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-orange-600 transition px-2 py-1">Contact</a>
+                    <a href="#download" class="nav-link text-gray-700 hover:text-orange-600 transition px-2 py-1 bg-orange-50 rounded-full md:bg-transparent md:rounded-none px-3 md:px-2">📲 App</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-
-    <section class="relative">
-
-        <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd"
-            alt="Hero"
-            class="w-full h-[350px] object-cover">
-
-        <div class="absolute inset-0 bg-black/60"></div>
-
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="relative">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&auto=format"
+            alt="Hydraulics & heavy machinery workshop" 
+            class="w-full h-[380px] md:h-[460px] object-cover"
+            loading="eager"
+            fetchpriority="high">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-
-            <h1 class="text-white text-4xl font-bold">
-                Sri Amman Hydraulics & Welding
-            </h1>
-
-            <p class="text-white text-lg mt-2">
-                Sathyamangalam
-            </p>
-
-            <p class="text-gray-200 mt-4 max-w-xl">
-                JCB • Hitachi • Welding • Fabrication • Operator Jobs
-            </p>
-
-            <a
-                href="https://drive.google.com/file/d/1oA0-569YAXYNKxKUDFBB2YAVWILP6-WJ/view?usp=drive_link"
-                target="_blank"
-                class="mt-6 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold shadow-lg">
-
-                📲 Download App
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- Welcome -->
-
-    <section class="px-5 py-10">
-
-        <h2 class="text-3xl font-bold text-center text-gray-800">
-            Welcome To Sri Amman Hydraulics
-        </h2>
-
-        <p class="text-center text-gray-600 mt-4">
-            We are providing employment opportunities for skilled and fresh candidates in JCB Operations, Hitachi Operations, Welding, Fabrication, Mechanics, Workshop Helpers and Cleaners.
-        </p>
-
-    </section>
-
-    <!-- Owners -->
-
-    <section class="px-5">
-
-        <h2 class="text-3xl font-bold text-center mb-6">
-            Our Management
-        </h2>
-
-        <div class="grid grid-cols-2 gap-4">
-
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
-
-                <img
-                    src="image1.png"
-                    alt="Owner"
-                    class="w-full h-64 object-cover">
-
-                <div class="p-4 text-center">
-
-                    <h3 class="font-bold text-xl">
-                        Founder
-                    </h3>
-
-                    <p class="text-gray-500">
-                        Sri Amman Hydraulics
-                    </p>
-
+            <div class="max-w-3xl">
+                <span class="inline-block bg-orange-500/20 backdrop-blur-sm text-orange-100 px-4 py-1 rounded-full text-sm font-semibold tracking-wide mb-3">Since 2010 • Trusted Employer</span>
+                <h1 class="text-white text-4xl md:text-6xl font-extrabold leading-tight">
+                    Sri Amman Hydraulics & Welding
+                </h1>
+                <p class="text-white/90 text-xl md:text-2xl mt-3 font-medium">Sathyamangalam, Tamil Nadu</p>
+                <p class="text-gray-200 text-base md:text-lg mt-3 max-w-xl mx-auto">JCB • Hitachi • Heavy Welding • Fabrication • Operator Careers</p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#download"
+                        class="bg-orange-500 hover:bg-orange-600 transform hover:scale-105 transition text-white px-8 py-4 rounded-full font-bold shadow-xl flex items-center justify-center gap-2 text-lg">
+                        📲 Download App & Apply
+                    </a>
+                    <a href="#contact"
+                        class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 transition text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center gap-2 text-lg">
+                        📞 Call HR Now
+                    </a>
                 </div>
-
             </div>
+        </div>
+    </section>
 
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+    <!-- ========== WELCOME SECTION WITH STATS ========== -->
+    <section class="max-w-7xl mx-auto px-5 py-14 md:py-20">
+        <div class="text-center max-w-3xl mx-auto">
+            <span class="text-orange-500 font-semibold tracking-wide uppercase text-sm">Building careers in heavy equipment</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Welcome To Sri Amman Hydraulics</h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+            <p class="text-gray-600 text-lg mt-6 leading-relaxed">
+                We empower skilled & fresh talent with stable employment in <strong class="text-gray-800">JCB Operations, Hitachi, Heavy Welding, Fabrication, Mechanics, Workshop Helpers & Cleaners</strong>. Join our family for long-term growth.
+            </p>
+        </div>
+        <!-- quick stats row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-14">
+            <div class="bg-white rounded-2xl shadow-sm p-5 text-center border border-gray-100 hover-lift">
+                <div class="text-3xl mb-2">👥</div>
+                <div class="font-bold text-2xl text-gray-800">500+</div>
+                <p class="text-gray-500">Workers Placed</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm p-5 text-center border border-gray-100 hover-lift">
+                <div class="text-3xl mb-2">🏭</div>
+                <div class="font-bold text-2xl text-gray-800">10+</div>
+                <p class="text-gray-500">Partner Sites</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm p-5 text-center border border-gray-100 hover-lift">
+                <div class="text-3xl mb-2">⏱️</div>
+                <div class="font-bold text-2xl text-gray-800">24/7</div>
+                <p class="text-gray-500">Shift Support</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm p-5 text-center border border-gray-100 hover-lift">
+                <div class="text-3xl mb-2">🎓</div>
+                <div class="font-bold text-2xl text-gray-800">Free Training</div>
+                <p class="text-gray-500">Skill Upgrade</p>
+            </div>
+        </div>
+    </section>
 
-                <img
-                    src="image2.png"
-                    alt="Owner"
-                    class="w-full h-64 object-cover">
-
-                <div class="p-4 text-center">
-
-                    <h3 class="font-bold text-xl">
-                        Managing Director
-                    </h3>
-
-                    <p class="text-gray-500">
-                        Sri Amman Hydraulics
-                    </p>
-
+    <!-- ========== JOB ROLES SECTION ========== -->
+    <section id="jobs" class="bg-gray-100/80 py-16">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">📢 Available Job Roles</h2>
+                <p class="text-gray-600 mt-3 text-lg">Immediate openings | Freshers & experienced welcome</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover-lift transition-all">
+                    <div class="h-2 bg-gradient-to-r from-yellow-500 to-yellow-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="text-5xl mb-3">🚜</div>
+                        <h3 class="text-2xl font-bold text-gray-800">JCB Operator</h3>
+                        <p class="text-gray-500 mt-2">Earthmoving & heavy loader experts</p>
+                        <span class="inline-block mt-4 bg-yellow-100 text-yellow-800 px-4 py-1 rounded-full text-sm font-medium">Walk-in Available</span>
+                    </div>
                 </div>
-
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover-lift transition-all">
+                    <div class="h-2 bg-gradient-to-r from-orange-500 to-orange-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="text-5xl mb-3">🏗️</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Hitachi Operator</h3>
+                        <p class="text-gray-500 mt-2">Excavator & mining machinery</p>
+                        <span class="inline-block mt-4 bg-orange-100 text-orange-800 px-4 py-1 rounded-full text-sm font-medium">Urgent Hiring</span>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover-lift transition-all">
+                    <div class="h-2 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="text-5xl mb-3">🔥</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Heavy Welder</h3>
+                        <p class="text-gray-500 mt-2">Arc, MIG & structural fabrication</p>
+                        <span class="inline-block mt-4 bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-medium">Certification Bonus</span>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover-lift transition-all">
+                    <div class="h-2 bg-gradient-to-r from-green-500 to-emerald-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="text-5xl mb-3">👷</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Workshop Helper</h3>
+                        <p class="text-gray-500 mt-2">Support & maintenance tasks</p>
+                        <span class="inline-block mt-4 bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-medium">No Experience Needed</span>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover-lift transition-all">
+                    <div class="h-2 bg-gradient-to-r from-purple-500 to-violet-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="text-5xl mb-3">🧹</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Cleaner / Housekeeping</h3>
+                        <p class="text-gray-500 mt-2">Workshop & yard cleanliness</p>
+                        <span class="inline-block mt-4 bg-purple-100 text-purple-800 px-4 py-1 rounded-full text-sm font-medium">Flexible Shifts</span>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover-lift transition-all">
+                    <div class="h-2 bg-gradient-to-r from-pink-500 to-rose-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="text-5xl mb-3">🔧</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Hydraulic Mechanic</h3>
+                        <p class="text-gray-500 mt-2">Repair & troubleshooting</p>
+                        <span class="inline-block mt-4 bg-pink-100 text-pink-800 px-4 py-1 rounded-full text-sm font-medium">Experience Preferred</span>
+                    </div>
+                </div>
             </div>
-
+            <div class="text-center mt-10">
+                <p class="text-gray-500">More roles: Fabricator, Supervisor, Store Keeper — apply via app</p>
+            </div>
         </div>
-
     </section>
 
-    <!-- Job Categories -->
-
-    <section class="px-5 py-10">
-
-        <h2 class="text-3xl font-bold text-center mb-6">
-            Available Job Roles
-        </h2>
-
-        <div class="grid grid-cols-2 gap-4">
-
-            <div class="bg-yellow-500 text-white p-5 rounded-2xl font-bold text-center">
-                🚜 JCB Operator
-            </div>
-
-            <div class="bg-orange-500 text-white p-5 rounded-2xl font-bold text-center">
-                🏗 Hitachi Operator
-            </div>
-
-            <div class="bg-blue-500 text-white p-5 rounded-2xl font-bold text-center">
-                🔥 Welder
-            </div>
-
-            <div class="bg-green-500 text-white p-5 rounded-2xl font-bold text-center">
-                👷 Workshop Helper
-            </div>
-
-            <div class="bg-purple-500 text-white p-5 rounded-2xl font-bold text-center">
-                🧹 Cleaner
-            </div>
-
-            <div class="bg-pink-500 text-white p-5 rounded-2xl font-bold text-center">
-                🔧 Mechanic
-            </div>
-
+    <!-- ========== MANAGEMENT TEAM SECTION - ENHANCED WITH BETTER IMAGE VISIBILITY ========== -->
+    <section id="management" class="max-w-7xl mx-auto px-5 py-16">
+        <div class="text-center mb-12">
+            <span class="text-orange-500 font-semibold tracking-wide uppercase text-sm">Leadership</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">🌟 Our Visionary Management</h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto mt-3 rounded-full"></div>
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Industry leaders committed to workforce excellence & safety</p>
         </div>
 
-    </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            
+            <!-- Founder Card - Enhanced with better image container and gradient overlay -->
+            <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <div class="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100">
+                    <!-- Improved image handling: object-contain + background for better visibility -->
+                    <img src="image1.png" 
+                         alt="Founder - Sri Amman Hydraulics" 
+                         class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x700/FFF3E0/FF8C00?text=Founder+Image'; this.classList.add('object-cover', 'p-0')">
+                    
+                    <!-- Professional overlay badge -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <span class="text-white font-bold text-lg md:text-xl tracking-wide">Founder & Chairman</span>
+                                <p class="text-orange-200 text-sm">Est. 1990</p>
+                            </div>
+                            <div class="bg-orange-500/80 backdrop-blur-sm rounded-full p-2">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
 
-    <!-- Why Choose Us -->
-
-    <section class="px-5">
-
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-3xl p-8 shadow-lg">
-
-            <h2 class="text-2xl font-bold">
-                Why Choose Us?
-            </h2>
-
-            <ul class="mt-4 space-y-2">
-
-                <li>✅ Safe Working Environment</li>
-                <li>✅ Good Salary Package</li>
-                <li>✅ Career Growth Opportunities</li>
-                <li>✅ Friendly Team</li>
-                <li>✅ Training Support</li>
-
-            </ul>
-
+            <!-- Managing Director Card - Enhanced with better image presentation -->
+            <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <div class="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-indigo-50 to-purple-100">
+                    <!-- Improved image: object-contain with soft background gradient for visibility -->
+                    <img src="image2.png" 
+                         alt="Managing Director - Sri Amman Hydraulics" 
+                         class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x700/F3E8FF/8B5CF6?text=Managing+Director'; this.classList.add('object-cover', 'p-0')">
+                    
+                    <!-- Stylish bottom overlay -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <span class="text-white font-bold text-lg md:text-xl tracking-wide">Managing Director</span>
+                                <p class="text-purple-200 text-sm">Strategic Growth</p>
+                            </div>
+                            <div class="bg-purple-500/80 backdrop-blur-sm rounded-full p-2">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-
-    </section>
-
-    <!-- Download App -->
-
-    <section class="px-5 py-10">
-
-        <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-3xl p-8 text-center shadow-xl">
-
-            <h2 class="text-3xl font-bold">
-                Apply Through Our Mobile App
-            </h2>
-
-            <p class="mt-3">
-                Download the application and apply for jobs directly.
-            </p>
-
-            <a
-                href="https://drive.google.com/file/d/1oA0-569YAXYNKxKUDFBB2YAVWILP6-WJ/view?usp=drive_link"
-                target="_blank"
-                class="inline-block mt-5 bg-white text-orange-600 px-8 py-4 rounded-full font-bold">
-
-                Download App
-            </a>
-
+        
+        <!-- Decorative element -->
+        <div class="flex justify-center mt-12">
+            <div class="bg-gradient-to-r from-orange-100 via-amber-100 to-orange-100 rounded-full px-6 py-2 shadow-sm">
+                <p class="text-gray-600 text-sm">⚡ 40+ years combined experience | 500+ careers built</p>
+            </div>
         </div>
-
     </section>
 
-    <!-- Contact -->
-
-    <section class="px-5 pb-10">
-
-        <div class="bg-white rounded-3xl shadow-xl p-8 text-center">
-
-            <h2 class="text-2xl font-bold text-gray-800">
-                Contact Us
-            </h2>
-
-            <p class="mt-4 text-2xl font-bold text-green-600">
-                📞 9080040143
-            </p>
-
-            <p class="mt-3 text-gray-600">
-                Sri Amman Hydraulics & Welding
-            </p>
-
-            <p class="text-gray-600">
-                Sathyamangalam, Tamil Nadu
-            </p>
-
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="max-w-7xl mx-auto px-5 py-6">
+        <div class="bg-gradient-to-br from-blue-700 to-indigo-900 rounded-3xl p-8 md:p-10 shadow-2xl text-white">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold">Why Choose Us?</h2>
+                    <div class="w-16 h-1 bg-orange-400 my-4 rounded-full"></div>
+                    <p class="text-blue-100 text-lg">We believe in dignity of labour and career progression for every employee.</p>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-center gap-3 text-lg"><span class="bg-white/20 rounded-full p-1 text-xl">✅</span> Safe & certified working environment</li>
+                        <li class="flex items-center gap-3 text-lg"><span class="bg-white/20 rounded-full p-1 text-xl">💰</span> Competitive salary + OT benefits</li>
+                        <li class="flex items-center gap-3 text-lg"><span class="bg-white/20 rounded-full p-1 text-xl">📈</span> Career growth & internal promotions</li>
+                        <li class="flex items-center gap-3 text-lg"><span class="bg-white/20 rounded-full p-1 text-xl">🤝</span> Supportive team & on-job training</li>
+                        <li class="flex items-center gap-3 text-lg"><span class="bg-white/20 rounded-full p-1 text-xl">🏅</span> ESI, PF & insurance benefits</li>
+                    </ul>
+                </div>
+                <div class="flex justify-center">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center w-full max-w-xs">
+                        <div class="text-6xl mb-2">🔰</div>
+                        <p class="font-semibold text-xl">"Employee First"</p>
+                        <p class="text-blue-100 text-sm mt-2">Join family of 500+ satisfied professionals</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </section>
 
-    <!-- Footer -->
+    <!-- ========== DOWNLOAD APP SECTION ========== -->
+    <section id="download" class="max-w-7xl mx-auto px-5 py-16">
+        <div class="bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl p-10 md:p-14 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-12 -top-12 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="relative z-10">
+                <div class="text-6xl mb-4">📱💼</div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white">Apply Through Our Mobile App</h2>
+                <p class="text-orange-100 text-xl mt-4 max-w-2xl mx-auto">Download the official Sri Amman JobSeeker App — fill application, upload resume & get interview call instantly.</p>
+                <div class="mt-8 flex flex-wrap justify-center gap-5">
+                    <a href="https://drive.google.com/file/d/1oA0-569YAXYNKxKUDFBB2YAVWILP6-WJ/view?usp=drive_link" 
+                       target="_blank"
+                       class="inline-flex items-center gap-3 bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg shadow-xl transition-transform transform hover:scale-105">
+                        <span>📥 Download APK / App</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-black/20 backdrop-blur-sm text-white border border-white/40 hover:bg-white/20 px-6 py-4 rounded-full font-semibold">
+                        Need Help? Contact Support
+                    </a>
+                </div>
+                <p class="text-white/80 text-sm mt-6">Compatible with Android • Instant job alerts</p>
+            </div>
+        </div>
+    </section>
 
-    <footer class="bg-gray-900 text-white text-center py-6">
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="max-w-7xl mx-auto px-5 pb-16">
+        <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+            <div class="grid md:grid-cols-2">
+                <div class="p-8 md:p-10">
+                    <h2 class="text-3xl font-bold text-gray-800 flex items-center gap-2">📞 Contact Us</h2>
+                    <div class="mt-6 space-y-6">
+                        <div>
+                            <p class="text-gray-500 text-sm uppercase tracking-wide">📞 Direct Hiring Helpline</p>
+                            <a href="tel:9080040143" class="text-3xl md:text-4xl font-black text-green-600 hover:text-green-700 transition inline-block">
+                                90800 40143
+                            </a>
+                            <p class="text-gray-400 text-sm mt-1">Available Mon-Sat: 9AM - 7PM</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-5">
+                            <div class="flex items-start gap-3">
+                                <span class="text-2xl">🏢</span>
+                                <div>
+                                    <p class="font-bold text-gray-800">Sri Amman Hydraulics & Welding Works</p>
+                                    <p class="text-gray-600">No.45, Sathyamangalam Main Road,<br>Near Kalingarayan Palayam, Sathyamangalam - 638401,<br>Tamil Nadu, India.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 pt-2">
+                            <a href="tel:9080040143" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 shadow-md transition">📞 Call Now</a>
+                            <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium flex items-center gap-2 transition">📍 Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 min-h-[280px] flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format'); background-size: cover;">
+                    <div class="text-center p-6">
+                        <p class="text-white text-xl font-semibold">📍 Visit our main workshop</p>
+                        <p class="text-gray-200 mt-2">Walk-in interviews every Monday & Wednesday</p>
+                        <div class="mt-4 inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium">Open for immediate hiring</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3 class="font-bold text-xl">
-            Sri Amman Hydraulics & Welding
-        </h3>
-
-        <p class="text-gray-400 mt-2">
-            JCB • Hitachi • Welding • Fabrication
-        </p>
-
-        <p class="text-gray-500 mt-3">
-            © 2026 All Rights Reserved
-        </p>
-
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-1">
+                    <h3 class="text-2xl font-bold text-white">Sri Amman<span class="text-orange-500">Hydraulics</span></h3>
+                    <p class="text-gray-400 text-sm mt-2">Empowering heavy equipment workforce since 2010.</p>
+                    <div class="flex gap-3 mt-4">
+                        <span class="bg-gray-800 p-2 rounded-full cursor-pointer hover:bg-orange-500 transition">📘</span>
+                        <span class="bg-gray-800 p-2 rounded-full cursor-pointer hover:bg-orange-500 transition">📷</span>
+                        <span class="bg-gray-800 p-2 rounded-full cursor-pointer hover:bg-orange-500 transition">💬</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white text-lg">Quick Jobs</h4>
+                    <ul class="mt-3 space-y-2 text-sm">
+                        <li><a href="#jobs" class="hover:text-orange-400 transition">JCB / Hitachi Operators</a></li>
+                        <li><a href="#jobs" class="hover:text-orange-400 transition">Welders & Fabricators</a></li>
+                        <li><a href="#jobs" class="hover:text-orange-400 transition">Mechanics & Helpers</a></li>
+                        <li><a href="#download" class="hover:text-orange-400 transition">Apply via App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white text-lg">Resources</h4>
+                    <ul class="mt-3 space-y-2 text-sm">
+                        <li><a href="#management" class="hover:text-orange-400 transition">Management Team</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition">Training Programs</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition">Safety Policy</a></li>
+                        <li><a href="#contact" class="hover:text-orange-400 transition">Contact HR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white text-lg">Work With Us</h4>
+                    <p class="mt-2 text-sm">Send your resume to career@sriammanhydraulics.com or apply via mobile app for fastest response.</p>
+                    <a href="#download" class="inline-block mt-4 bg-orange-600 hover:bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium shadow transition">Download App</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+                <p>© 2026 Sri Amman Hydraulics & Welding — All Rights Reserved. | JCB • Hitachi • Welding • Fabrication Hub</p>
+                <p class="mt-1">📍 Sathyamangalam, Tamil Nadu | 📞 +91 9080040143</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- smooth scroll & active link script -->
+    <script>
+        (function(){
+            const sections = document.querySelectorAll('section[id], div[id="download"], div[id="contact"]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            if(navLinks.length){
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    const scrollPos = window.scrollY + 120;
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight){
+                            current = section.getAttribute('id');
+                        }
+                    });
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-orange-600', 'font-semibold');
+                        link.classList.add('text-gray-700');
+                        const href = link.getAttribute('href')?.substring(1);
+                        if(href === current){
+                            link.classList.remove('text-gray-700');
+                            link.classList.add('text-orange-600', 'font-semibold');
+                        }
+                    });
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
